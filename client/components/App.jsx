@@ -1,17 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { fetchFruits } from '../actions'
+import { fetchWebsites } from '../actions'
 
 import Website from './Website'
 
 export class App extends React.Component {
   state = {
-    fruits: []
+    website: ''
   }
 
   componentDidMount () {
-    this.props.dispatch(fetchFruits())
+    this.props.dispatch(fetchWebsites())
   }
 
 // The component will show a list of websites that I have created via preview picture, a link and brief description.
@@ -21,7 +21,7 @@ export class App extends React.Component {
       <div className='app'>
         <h1></h1>
         <ul>
-         <Website />
+         <Website data={this.state}/>
         </ul>
       </div>
     )
@@ -30,7 +30,7 @@ export class App extends React.Component {
 
 function mapStateToProps (globalState) {
   return {
-    fruits: globalState.fruits
+    websites: globalState.websites
   }
 }
 
