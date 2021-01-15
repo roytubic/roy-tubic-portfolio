@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 
 import { fetchFruits } from '../actions'
 
+import Website from './Website'
+
 export class App extends React.Component {
   state = {
     fruits: []
@@ -12,14 +14,14 @@ export class App extends React.Component {
     this.props.dispatch(fetchFruits())
   }
 
+// The component will show a list of websites that I have created via preview picture, a link and brief description.
+
   render () {
     return (
       <div className='app'>
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
+        <h1></h1>
         <ul>
-          {this.props.fruits.map(fruit => (
-            <li key={fruit}>{fruit}</li>
-          ))}
+         <Website />
         </ul>
       </div>
     )
