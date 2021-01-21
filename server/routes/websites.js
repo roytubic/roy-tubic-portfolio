@@ -1,13 +1,13 @@
 const express = require('express')
+const router = express.Router()
 
 const db = require('../db/websites')
 
-const router = express.Router()
-
 router.get('/', (req, res) => {
-  db.getWebsites()
+  const id = req.website.id
+  db.getWebsites(id)
     .then(results => {
-      res.json({ websites: results.map(website => website.??? })
+      res.json({ websites: results.map(website => website.body)})
       return null
     })
     .catch(err => {

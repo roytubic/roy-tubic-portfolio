@@ -1,5 +1,3 @@
-import { getWebsites } from '../apis/websites'
-
 export const SET_WEBSITES = 'SET_WEBSITES'
 
 export const setWebsites = (websites) => {

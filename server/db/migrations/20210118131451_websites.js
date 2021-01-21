@@ -1,6 +1,6 @@
 
 exports.up = function(knex) {
-    return knex.schema.createTable('websites', table => {
+    return knex.schema.createTable('website', table => {
         table.increments('id')
         table.string('website')
         table.string('url')
@@ -10,5 +10,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-    return knex.schema.dropTable('websites')
+    return knex.schema.dropTable('website')
 };

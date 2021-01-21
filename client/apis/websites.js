@@ -3,9 +3,11 @@ import { setWebsites } from '../actions/index'
 
 const rootUrl = '/api/v1'
 
-export function getWebsites () {
+export const getWebsites = (dispatch) => {
   return request
   .get(`${rootUrl}/websites`)
   .then(res => {
-    return res.body})
-  }
+    return dispatch(setWebsites(res.body))
+  })
+  .catch(err => console.log(err))
+}

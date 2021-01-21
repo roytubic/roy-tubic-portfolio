@@ -6,16 +6,14 @@ import Website from './Website'
 class App extends React.Component {
   render () {
     return (
-      <Router>
       <div className='app'>
         <h1></h1>
         <ul>
-         <Route path='/' component={Website}/>
+         <Website/>
         </ul>
       </div>
-      </Router>
     )
   }
 }
 
-export default connect(mapStateToProps)(App)
+export default connect()(App)

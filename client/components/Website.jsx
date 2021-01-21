@@ -9,7 +9,7 @@ class Website extends React.Component {
         website: '',
         url: '',
         summary: '',
-        imgurl: ''
+        // imgurl: 'https://miro.medium.com/max/6000/1*OK0l4IKbofvx2Eys41D75w.jpeg'
     }}
 
 // for imgurl, perhaps there is a way to get a live preview of the site?
@@ -27,13 +27,13 @@ componentDidMount () {
         return (
             <>
                 <div>
-                    <img src={props.webPage.imgurl} class='websitePic'></img>
-                    <a href={props.webPage.url}>{props.webPage.website}</a>
-                    <p>{props.webPage.summary}</p>
+                    {/* <img src={this.state.webPage.imgurl} class='websitePic'></img> */}
+                    <a href={this.state.webPage.url}>{this.state.webPage.website}</a>
+                    <p>{this.state.webPage.summary}</p>
                 </div>
             </>
         )
     }
 }
 
-export default connect(mapStateToProps)(Website)
+export default connect()(Website)
