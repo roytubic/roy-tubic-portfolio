@@ -1,8 +1,13 @@
 const connection = require('./connection')
 
-function getWebsites (db = connection) {
-  return db('website').select()
+function getWebsites (website, db = connection) {
+  return db('website')
+  .select()
+  .where( { website } )
+  .first()
 }
+
+
 
 module.exports = {
   getWebsites
